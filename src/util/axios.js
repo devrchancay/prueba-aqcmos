@@ -2,7 +2,7 @@ import axios from "axios";
 
 const baseURL =
   process.env.NODE_ENV === "production"
-    ? "http://pruebas.aquicreamos.com/"
+    ? "https://prueba-ramon-chancay.now.sh/"
     : "http://localhost:3001/";
 const axiosConfig = { baseURL };
 
