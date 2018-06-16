@@ -22,7 +22,7 @@ export const fetchResources = ({ filter }) => async dispatch => {
     const resource = new Resource();
     const response = await resource.fetchResource({ filter });
     if (response.status === 200) {
-      debugger;
+      dispatch(receivedResource(response.data));
     }
     dispatch(loading(false));
   } catch (err) {}

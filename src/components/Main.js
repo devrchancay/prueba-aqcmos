@@ -21,7 +21,20 @@ class Main extends Component {
     this.props.fetchResources({});
   }
   render() {
-    return <div>{JSON.stringify(this.props)}</div>;
+    return (
+      <div className="flex justify-center pt-4">
+        <ul className="list-reset w-full md:w-1/2">
+          {this.props.resource.data.map(item => {
+            return (
+              <li key={item.id} className="border flex p-2">
+                <span className="pr-2">{item.id}</span>
+                <span>{item.data}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
 }
 

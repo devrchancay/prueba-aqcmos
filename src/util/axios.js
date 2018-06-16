@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const baseURL = "http://pruebas.aquicreamos.com/";
+const baseURL =
+  process.env.NODE_ENV === "production"
+    ? "http://pruebas.aquicreamos.com/"
+    : "http://localhost:3001/";
 const axiosConfig = { baseURL };
 
 const customAxios = axios.create(axiosConfig);
