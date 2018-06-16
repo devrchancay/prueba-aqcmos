@@ -16,11 +16,11 @@ export const errorFetchResource = error => ({
   error
 });
 
-export const fetchResources = ({ filter }) => async dispatch => {
+export const fetchResources = filter => async dispatch => {
   try {
     dispatch(loading());
     const resource = new Resource();
-    const response = await resource.fetchResource({ filter });
+    const response = await resource.fetchResource(filter);
     if (response.status === 200) {
       dispatch(receivedResource(response.data));
     }
